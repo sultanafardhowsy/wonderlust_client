@@ -1,0 +1,49 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+
+/* Brand tokens from the Wanderlust design */
+:root {
+  --accent: #15a1bf;
+  --accent-foreground: #ffffff;
+  --radius: 0.625rem;
+}
+
+@theme {
+  --color-brand: #15a1bf;
+  --color-brand-dark: #0e7f98;
+  --color-brand-light: #edfcff;
+  --color-ink: #0c0b0b;
+  --color-muted: #6c696d;
+  --color-line: #e7e7e9;
+  --color-ok: #1e9e35;
+  --color-warn: #fe9a00;
+  --color-bad: #ef4444;
+  --font-display: "Josefin Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-white text-ink font-sans; }
+h1, h2, h3, .font-display { font-family: var(--font-display); }
+
+@utility container-x {
+  @apply mx-auto w-full max-w-7xl px-5 md:px-8;
+}
+
+@utility eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.2em] text-brand;
+}
+
+@utility btn-brand {
+  @apply inline-flex items-center justify-center gap-2 bg-brand px-6 py-3 text-sm font-semibold uppercase tracking-wider text-white transition hover:bg-brand-dark active:scale-[0.98] rounded-lg;
+}
+
+@utility btn-ghost-light {
+  @apply inline-flex items-center justify-center gap-2 border border-white/40 bg-white/15 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-white backdrop-blur-md transition hover:bg-white/25 rounded-lg;
+}
